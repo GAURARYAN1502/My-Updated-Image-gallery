@@ -1,0 +1,341 @@
+/* styles.css */
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+    color: #fff;
+    background: #6a00ff;
+}
+
+body {
+    padding: 10px;
+    background-image: url('https://cdn.wallpapersafari.com/73/33/P9b2gR.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+}
+
+.side-nav {
+    width: 200px;
+    background-color: rgba(62, 146, 202, 0.9);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    border-radius: 50px;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.items {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.item:hover, .item.active {
+    background-color: #00eaff;
+    color: white;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 220px; /* To accommodate the fixed side-nav */
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: calc(100vh - 40px); /* Adjust height based on padding */
+}
+
+.gallery .image {
+    width: calc(100% / 4 - 14px);
+    margin: 7px;
+    box-sizing: border-box;
+}
+
+.gallery .image span {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery .image img,
+.gallery .image video {
+    width: 100%;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.gallery .image:hover img,
+.gallery .image:hover video {
+    transform: scale(1.1);
+}
+
+.gallery .image.hide {
+    display: none;
+}
+
+.gallery .image.show {
+    animation: animate 0.4s ease;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.preview-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #4d9299;
+    max-width: 700px;
+    width: 100%;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 3px;
+    padding: 0 5px 5px 5px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+.preview-box.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.3s ease;
+}
+
+.preview-box .details {
+    padding: 13px 15px 13px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details .title {
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.details .title p {
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.details .icon {
+    color: #6a00ff;
+    font-style: 22px;
+    cursor: pointer;
+}
+
+.shadow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: none;
+    background: rgba(0,0,0,0.4);
+}
+
+.shadow.show {
+    display: block;
+}
+
+@media (max-width: 1000px) {
+    .gallery .image {
+        width: calc(100% / 3 - 14px);
+    }
+}
+
+@media (max-width: 800px) {
+    .gallery .image {
+        width: calc(100% / 2 - 14px);
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .gallery {
+        margin-left: 0;
+        height: auto;
+    }
+
+    .gallery .image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-nav {
+        width: 150px;
+        height: auto;
+        top: 5px;
+        left: 5px;
+        border-radius: 30px;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .side-nav {
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 10px;
+        position: relative; /* Make it relative to flow with the document */
+    }
+
+    .items {
+        flex-direction: row; /* Arrange items horizontally */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+    }
+
+    .item {
+        flex: 1 1 calc(50% - 10px); /* Make items take up half the width */
+        margin: 5px; /* Adjust margin for spacing */
+    }
+}
+
+/* Style for the scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+footer {
+    background-color: #333; /* Adjust color as needed */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .social-links li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .social-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+/* Add zoom-in/out styling for images */
+.preview-box .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.preview-box img {
+    max-width: 100%;
+    max-height: 80vh; /* Limit height to ensure it fits within the viewport */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.preview-box img.zoomed-in {
+    cursor: zoom-out;
+    transform: scale(2); /* Zoom scale */
+    object-fit: cover;
+}
+
+.preview-box img.scrollable {
+    max-width: none;
+    width: auto;
+    height: auto;
+    cursor: grab;
+}
+
+.preview-box img.scrollable:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 480px) {
+    .preview-box {
+        width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+    }
+
+    .preview-box img {
+        max-width: 100%;
+        max-height: 70vh;
+    }
+}
+
+/* Optional: Darken the shadow for better visibility during zoom */
+.shadow {
+    background: rgba(0, 0, 0, 0.7);
+}

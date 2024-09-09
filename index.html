@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaur Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Filter Items -->
+        <nav class="side-nav">
+            <div class="items">
+                <span class="item active" data-name="all">All</span>
+                <span class="item" data-name="college event">College Event</span>
+                <span class="item" data-name="friends">Friends</span>
+                <span class="item" data-name="personal">Personal</span>
+                <span class="item" data-name="others">Others</span>
+            </div>
+        </nav>
+        
+        <!-- Filter Images and Videos -->
+        <div class="gallery">
+            <div class="image" data-name="others"><span><img src="IMG-20240525-WA0026.jpg" alt=""></span></div>
+            <div class="image" data-name="others"><span><img src="AG.jpg" alt=""></span></div>
+            <div class="image" data-name="others"><span><img src="IMG-20240509-WA0021.jpg" alt=""></span></div>
+        
+         <div class="image" data-name="college event"><span><img src="IMG-20240512-WA0043.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="IMG-20240511-WA0072.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="WhatsApp Image 2024-06-12 at 19.05.48_7ec78030.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="IMG-20240509-WA0027.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="IMG-20240510-WA0050.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="IMG-20240511-WA0016.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="IMG-20240511-WA0059.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="IMG-20240512-WA0530.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="20221210_144941-1.jpg" alt=""></span></div>
+         <div class="image" data-name="college event"><span><img src="20221210_144558.jpg" alt=""></span></div>
+         <div class="image" data-name="friends"><span><img src="IMG-20240424-WA0016.jpg" alt=""></span></div>
+         <div class="image" data-name="friends"><span><img src="IMG-20240429-WA0004.jpg" alt=""></span></div>
+         <div class="image" data-name="friends"><span><img src="IMG-20240429-WA0001.jpg" alt=""></span></div>
+         <div class="image" data-name="friends"><span><img src="IMG-20240511-WA0015.jpg" alt=""></span></div>
+         <div class="image" data-name="friends"><span><img src="IMG-20240212-WA0069.jpg" alt=""></span></div>
+         <div class="image" data-name="friends"><span><img src="IMG_20230102_124531.jpg" alt=""></span></div>
+         <div class="image" data-name="friends"><span><img src="editing 1.jpg" alt=""></span></div>
+         <div class="image" data-name="personal"><span><img src="IMG_20221029_183148_585.jpg" alt=""></span></div>
+         <div class="image" data-name="personal"><span><img src="IMG_20221114_213616_185.jpg" alt=""></span></div>
+         <div class="image" data-name="personal"><span><img src="IMG_20220922_203811_527.jpg" alt=""></span></div>
+         <div class="image" data-name="personal"><span><img src="5.jpg" alt=""></span></div>
+         <div class="image" data-name="personal"><span><img src="IMG_20220922_203218.png" alt=""></span></div>
+         
+         
+          <div class="image" data-name="college event">
+        
+            <span>
+                <video controls>
+                    <source src="VID-20240510-WA0052.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </span>
+            <span>
+                <video controls>
+                    <source src="VID-20240512-WA0207.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </span>
+            
+
+
+            </div>
+            <div class="image" data-name="personal">
+                <span>
+                    <video controls>
+                        <source src="4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Image/Video Preview Box -->
+    <div class="preview-box">
+        <div class="details">
+            <span class="title">Category: <p></p></span>
+            <span class="icon fas fa-times"></span>
+            <span class="icon fas fa-download" onclick="downloadImage()"></span>
+        </div>
+        <div class="media-box">
+            <!-- Initially empty, will be populated by JavaScript -->
+            <img src="" alt="Preview Image">
+            <video controls style="display: none;">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div class="shadow"></div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/aryan-gaur-432b90223/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://github.com/GAURARYAN1502" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="mailto:aryangaur5193@gmail.com">Gmail</a></li>
+          </ul>
+        </div>
+      </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
